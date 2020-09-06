@@ -170,7 +170,66 @@
 				seconds: 's'
 			}
 		},
+		'ko': {
+			directions: {
+				N: '북쪽', //'north',
+				NE: '북동쪽', //'northeast',
+				E: '동쪽', //'east',
+				SE: '남동쪽', //'southeast',
+				S: '남쪽', //'south',
+				SW: '남서부', //'southwest',
+				W: '서쪽', //'west',
+				NW: '북서쪽', //'northwest',
+				SlightRight: '약간 오른쪽', //'slight right',
+				Right: '오른쪽', //'right',
+				SharpRight: '날카로운 오른쪽', //'sharp right',
+				SlightLeft: '약간 왼쪽', //'slight left',
+				Left: '왼쪽', //'left',
+				SharpLeft: '날카로운 왼쪽', //'sharp left',
+				Uturn: '유턴' //'Turn around'
+			},
+			instructions: {
+				// instruction, postfix if the road is named
+				'Head':
+					[ '머리 {dir}', 'on {road}'],
+				'Continue':
+					[ '계속 {dir}'],
+				'TurnAround':
+					['돌아서 다'],
+				'WaypointReached':
+					[ '경유지 도달'],
+				'Roundabout':
+					[ '로터리에서 {exitStr} 출구로 나가기', '{road}로 진입'],
+				'DestinationReached':
+					[ '목적지 도달'],
+				'Fork': [ '분기점에서 {modifier}', '를 {road}로 돌립니다.'],
+				'Merge': [ '합류 {modifier}', ' {road}로'],
+				'OnRamp': [ '진입로에서 {modifier} 회전', '{road}로 진입'],
+				'OffRamp': [ '{modifier}', '{road}로 진입로 진입'],
+				'EndOfRoad': [ '도로 끝에서 {modifier} ', '{road}로 진입'],
+				'Onto': '{road}로'
+			},
+			formatOrder: function(n) {
+				var i = n % 10 - 1,
+				suffix = ['st', 'nd', 'rd'];
 
+				return suffix[i] ? n + suffix[i] : n + '번째';
+			},
+			ui: {
+				startPlaceholder: '출발지',
+				viaPlaceholder: '경유지 {viaNumber}',
+				endPlaceholder: '목적지'
+			},
+			units: {
+				meters: 'm',
+				kilometers: 'km',
+				yards: 'yd',
+				miles: 'mi',
+				hours: '시간',
+				minutes: '분',
+				seconds: '초'
+			}
+		},
 		'de': {
 			directions: {
 				N: 'Norden',
